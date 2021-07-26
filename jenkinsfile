@@ -1,4 +1,4 @@
-node('JAVA') {
+node('MASTER') {
    stage('SCM') {
         git 'https://github.com/vivekreddy12/openmrs-core.git'
    }
