@@ -1,0 +1,12 @@
+node('JAVA') {
+   stage('SCM') {
+        git 'https://github.com/vivekreddy12/openmrs-core.git'
+   }
+   stage('build') {
+        sh 'mvn package'
+   }
+   stage('postbuild') {
+        junit '**/TEST-*.xml'
+        archive '**/*.war'
+   }
+}
